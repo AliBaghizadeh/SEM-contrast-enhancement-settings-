@@ -1,3 +1,14 @@
+---
+title: SEM Contrast Enhancement
+emoji: 📈
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: "1.36.0"
+app_file: app/streamlit_app.py
+pinned: false
+---
+
 # SEM Contrast Enhancement Settings
 
 This repository condenses an SEM-preprocessing workflow into a single,
