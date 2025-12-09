@@ -32,7 +32,7 @@ def synthetic_grain_boundaries(shape: int = 512) -> np.ndarray:
 SAMPLE_FILES = {}
 if EXAMPLES_DIR.exists():
     for path in sorted(EXAMPLES_DIR.glob("*.png")):
-        SAMPLE_FILES[f"Sample: {path.stem}"] = path
+        SAMPLE_FILES[path.name] = path
 
 SYNTHETIC_SAMPLES = {
     "Sample: synthetic grains + lines": synthetic_grains_and_lines,
@@ -148,18 +148,17 @@ image = None
 filename = "uploaded_image"
 
 if sample_choice != "Upload your own":
-    if sample_choice in SAMPLE_FILES:
-        sample_path = SAMPLE_FILES[sample_choice]
+    selected = AVAILABLE_SAMPLES[sample_choice]
+    if isinstance(selected, Path):
         try:
-            image = load_sem_from_path(sample_path)
+            image = load_sem_from_path(selected)
         except Exception as exc:
             st.error(f"Failed to load sample: {exc}")
             st.stop()
-        filename = sample_path.stem
+        filename = Path(selected).stem
     else:
-        generator = AVAILABLE_SAMPLES[sample_choice]
-        image = generator()
-        filename = sample_choice.replace("Sample: ", "").replace(" ", "_")
+        image = selected()
+        filename = sample_choice.replace("Sample:", "").replace(" ", "_")
 else:
     uploaded = st.file_uploader(
         "Upload a SEM image (TIFF, PNG, JPG)", type=["tif", "tiff", "png", "jpg", "jpeg"]
