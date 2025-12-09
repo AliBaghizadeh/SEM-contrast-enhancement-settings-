@@ -7,3 +7,4 @@ tifffile
 mlflow
 matplotlib
 tqdm
+imagecodecs

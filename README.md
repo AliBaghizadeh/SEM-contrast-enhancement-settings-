@@ -37,7 +37,7 @@ Sample PNGs (`examples/`) match both classes so the app/CI can run without raw d
 
 ```bash
 # Install with dev extras (ruff/pytest already listed)
-pip install -e .[dev]
+pip install -e .[dev] imagecodecs
 
 # Quick CLI smoke test (line-focused preset)
 python -m sem_line_enhancer.cli preprocess \
