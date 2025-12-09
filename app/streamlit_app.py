@@ -42,7 +42,22 @@ SYNTHETIC_SAMPLES = {
 st.set_page_config(page_title="SEM Line Enhancer", layout="wide")
 st.title("SEM Line & Grain Enhancement")
 st.caption(
-    "Upload a SEM micrograph or pick one of the samples to preview the preprocessing presets."
+    "Upload a SEM micrograph or pick a sample to preview the preprocessing presets."
+)
+st.markdown(
+    """
+**Preset cheat-sheet**
+
+- **Lines (ferroelastic / needle-like features):** multi-scale Frangi + DoG to
+  emphasize elongated ridges, aggressive dirt removal, bright-line fusion. Useful
+  when you care about *domain walls* or long conductive paths.
+- **Boundaries (grain-only micrographs):** lighter Frangi weights, stronger CLAHE +
+  smoothing to highlight polygonal grain edges. Ideal when the image mostly
+  contains *grain interiors and boundaries* with little line texture.
+
+Select the preset that best matches your sample, then compare the `Lines`,
+`Base`, and `Fused` views to understand what will be fed downstream (e.g., SAM/MatSAM).
+"""
 )
 
 
