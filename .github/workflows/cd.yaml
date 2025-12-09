@@ -1,0 +1,23 @@
+name: Deploy to HuggingFace Space
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install hub client
+        run: pip install huggingface_hub
+      - name: Upload to Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python -m huggingface_hub upload \
+            --repo-type space \
+            --repo alibaghizade/SEM-contrast-enhancement \
+            --local-dir . \
+            --token "$HF_TOKEN" \
+            --commit-message "Auto deploy from GitHub"
