@@ -66,7 +66,7 @@ st.markdown(
 
 st.markdown(
     """
-    <div style="text-align:center;">
+    <div style="text-align:left;">
         <strong>Preset cheat-sheet</strong><br/>
         <em>Lines (ferroelastic / needle-like features):</em> multi-scale Frangi + DoG to emphasize elongated ridges, aggressive dirt removal, bright-line fusion. Useful when you care about domain walls or long conductive paths.<br/>
         <em>Boundaries (grain-only micrographs):</em> lighter Frangi weights, stronger CLAHE + smoothing to highlight polygonal grain edges. Ideal when the image mostly contains grain interiors and boundaries with little line texture.<br/>
