@@ -117,6 +117,7 @@ Once deployed, the HF space mirrors the local app: preset dropdown, sample image
 ├── resize_images.py          # Optional 512×512 tiling utility
 ├── examples/                 # Sample PNGs used by app/CI
 ├── .github/workflows/ci.yaml
+├── requirements.txt
 └── README.md (this file)
 ```
 
