@@ -34,7 +34,6 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name "hf-space" -exec cp -r {} hf-space/ \;
 
           cd hf-space
-          rm -f examples/*.png 2>/dev/null || true
           git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-deploy from GitHub: $GITHUB_SHA"
           git push https://alibaghizade:$HF_TOKEN@huggingface.co/spaces/alibaghizade/SEM-contrast-enhancement main
