@@ -39,6 +39,11 @@ SYNTHETIC_SAMPLES = {
     "Sample: synthetic grain boundaries": synthetic_grain_boundaries,
 }
 
+if SAMPLE_FILES:
+    AVAILABLE_SAMPLES = SAMPLE_FILES
+else:
+    AVAILABLE_SAMPLES = SYNTHETIC_SAMPLES
+
 # Config the UI
 st.set_page_config(page_title="SEM Line Enhancer", layout="wide")
 
@@ -134,10 +139,7 @@ with col2:
         unsafe_allow_html=True,
     )
     all_sample_choices = ["Upload your own"]
-    if SAMPLE_FILES:
-        all_sample_choices += list(SAMPLE_FILES.keys())
-    if SYNTHETIC_SAMPLES:
-        all_sample_choices += list(SYNTHETIC_SAMPLES.keys())
+    all_sample_choices += list(AVAILABLE_SAMPLES.keys())
 
     sample_choice = st.selectbox("", all_sample_choices)
 
@@ -155,7 +157,7 @@ if sample_choice != "Upload your own":
             st.stop()
         filename = sample_path.stem
     else:
-        generator = SYNTHETIC_SAMPLES[sample_choice]
+        generator = AVAILABLE_SAMPLES[sample_choice]
         image = generator()
         filename = sample_choice.replace("Sample: ", "").replace(" ", "_")
 else:
