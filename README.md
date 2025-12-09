@@ -121,10 +121,5 @@ Once deployed, the HF space mirrors the local app: preset dropdown, sample image
 ```
 
 ---
-## 6. Next Steps / Ideas
-- Add pytest/ruff to CI for linting and functional tests.
-- Publish a Dockerfile for the preprocessing stack.
-- Log grid-search runs to MLflow or WandB and auto-update `presets.py`.
-- Extend Streamlit app with intermediate visualizations (artifact mask, std maps) for teaching purposes.
 
-Feel free to fork or adapt to your own SEM datasets—the repo is intentionally modular and lightweight so students, PhDs, or hiring managers can inspect the full workflow. Enjoy! 🎯
+Feel free to fork or adapt to your own SEM datasets—the repo is intentionally modular and lightweight so students, or PhDs, can inspect the full workflow. Enjoy! 🎯
