@@ -1,5 +1,5 @@
 ---
-title: SEM Contrast Enhancement
+Title: SEM Contrast Enhancement
 emoji: 📈
 colorFrom: blue
 colorTo: purple
