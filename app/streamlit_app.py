@@ -128,9 +128,10 @@ with col1:
         unsafe_allow_html=True,
     )
     preset = st.selectbox(
-        "",
+        "Preset",
         list(PIPELINE_PRESETS.keys()),
         index=list(PIPELINE_PRESETS.keys()).index(DEFAULT_PRESET),
+        label_visibility="collapsed",
     )
 
 with col2:
@@ -141,7 +142,11 @@ with col2:
     all_sample_choices = ["Upload your own"]
     all_sample_choices += list(AVAILABLE_SAMPLES.keys())
 
-    sample_choice = st.selectbox("", all_sample_choices)
+    sample_choice = st.selectbox(
+        "Sample",
+        all_sample_choices,
+        label_visibility="collapsed",
+    )
 
 uploaded = None
 image = None
