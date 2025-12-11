@@ -18,7 +18,7 @@ SEM datasets can be cleaned before feeding them into downstream ML pipelines.
 
 ![Sample enhancement panels](docs/Image.png)
 
-**Live demo:** https://huggingface.co/spaces/alibaghizade/SEM-contrast-enhancement
+**Live demo:** https://huggingface.co/spaces/alibaghizade/SEM-contrast-enhancement               
 **Deep dive:** [Medium – “Multi-scale Pre-processing for SEM Micrographs of Line-like Features”](https://medium.com/@alibaghizade/multi-scale-pre-processing-for-sem-micrographs-of-line-like-features-88303fb25631)
 
 ---
