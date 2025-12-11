@@ -16,6 +16,8 @@ reproducible package plus a Streamlit demo. The goal is to showcase key image
 enhancement algorithms (Frangi, DoG, CLAHE/bilateral, dirt inpainting) so large
 SEM datasets can be cleaned before feeding them into downstream ML pipelines.
 
+![Sample enhancement panels](docs/Image.png)
+
 **Live demo:** https://huggingface.co/spaces/alibaghizade/SEM-contrast-enhancement
 
 ---
